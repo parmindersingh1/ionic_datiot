@@ -1,0 +1,228 @@
+<ion-view class="profile-view">
+  <ion-nav-title>
+    <span>Edit Profile</span>
+  </ion-nav-title>
+  <ion-content>
+
+  <ng-form name="vm.Form" role="Form" id="Form" novalidate>
+
+      <div class="top-content row">
+        <div class="profile-container">
+          <div class="user-image-container">
+            <pre-img ratio="_1_1" helper-class="rounded-image">
+              <img class="user-image" ng-show="vm.imgURI !== undefined" ng-src="{{vm.imgURI}}"  spinner-on-load>
+            </pre-img>
+          </div>
+        </div>
+        <div class="user-background-image-outer">
+          <div multi-bg="[image]"></div>
+          <!-- <div multi-bg="['https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg']"></div> -->
+        </div>
+      </div>
+      <div class="row padding">
+        <div class="col col-50 text-center">
+          <button class="button icon icon-left  ion-camera button-positive" ng-click="vm.takePhoto()">
+          Take Photo
+          </button>
+        </div>
+
+        <div class="col col-50 text-center">
+          <button class="button icon icon-left  ion-images button-positive" ng-click="vm.choosePhoto()">
+          Choose Photo
+          </button>
+        </div>
+      </div>
+
+      <div class="bottom-content">
+        <ul class="list">
+          <div class="item item-divider">User Info</div>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="Enter your First Name"  name="firstName"
+                       ng-model="vm.user.firstname" required>
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Enter your Last Name"  name="lastName"
+                       ng-model="vm.user.lastname" required>
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="Enter a valid E-mail"  ng-readonly="true" name="email"
+                       ng-model="vm.user.email" required>
+              </label>
+
+
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Mobile</span>
+                <input type="tel"  placeholder="Enter your Mobile Number" name="mobile"
+                       ng-model="vm.user.mobile" ng-pattern="/^[0-9]*$/" ng-minlength=10
+                       ng-maxlength=10 required>
+              </label>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Address</span>
+                <input type="text" placeholder="Enter your Address" name="address"
+                       ng-model="vm.user.address" ng-minlength=6 ng-maxlength=500 required>
+              </label>
+                <div class="item item-divider">Gender</div>
+              <ion-list>
+                <ion-radio id="us-female" name="gender" ng-value="'Female'" ng-model="vm.user.gender"
+                       required>Female</ion-radio>
+                <ion-radio id="us-male" name="gender" ng-value="'Male'" ng-model="vm.user.gender" required>Male</ion-radio>
+              </ion-list>
+            </ul>
+            <div class="list bottom-content padding">
+              <button class="button button-positive button-block" ng-click="vm.save()"> Update </button>
+              <a ui-sref="app.dashboard" class="button button-assertive button-block" > Cancel </a>
+           </div>
+
+      </div>
+    </ng-form>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid container-fullw bg-white">
+  <div class="row">
+    <div class="col-md-12">
+      <uib-tabset class="tabbable">
+
+        <uib-tab heading="Edit">
+          <fieldset>
+            <legend>
+              Account Info
+            </legend>
+            <ng-form name="vm.Form" role="Form" id="Form" novalidate>
+
+              <div class="row">
+                <div class="col-md-6">
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.firstName.$dirty && vm.Form.firstName.$invalid, 'has-success':vm.Form.firstName.$valid}">
+                    <label class="control-label"> First Name <span class="symbol required"></span> </label>
+                    <input type="text" placeholder="Enter your First Name" class="form-control" name="firstName"
+                           ng-model="vm.user.firstname" required/>
+                    <span class="error text-small block" ng-if="vm.Form.firstName.$dirty && vm.Form.firstName.$invalid">First Name is required</span>
+                  </div>
+
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.lastName.$dirty && vm.Form.lastName.$invalid, 'has-success':vm.Form.lastName.$valid}">
+                    <label class="control-label"> Last Name <span class="symbol required"></span> </label>
+                    <input type="text" placeholder="Enter your Last Name" class="form-control" name="lastName"
+                           ng-model="vm.user.lastname" required/>
+                    <span class="error text-small block" ng-if="vm.Form.lastName.$dirty && vm.Form.lastName.$invalid">Last Name is required</span>
+                  </div>
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.email.$dirty && vm.Form.email.$invalid, 'has-success':vm.Form.email.$valid}">
+                    <label class="control-label"> Email <span class="symbol required"></span> </label>
+                    <input type="email" placeholder="Enter a valid E-mail" class="form-control" ng-readonly="true" name="email"
+                           ng-model="vm.user.email" required>
+                    <span class="error text-small block" ng-if="vm.Form.email.$dirty && vm.Form.email.$error.required">Email is required.</span>
+                    <span class="error text-small block" ng-if="vm.Form.email.$error.email">Please, enter a valid email address.</span>
+                  </div>
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.mobile.$dirty && vm.Form.mobile.$invalid, 'has-success':vm.Form.mobile.$valid}">
+                    <label class="control-label"> Mobile Number <span class="symbol required"></span> </label>
+                    <input type="text" placeholder="Enter your Mobile Number" class="form-control" name="mobile"
+                           ng-model="vm.user.mobile" ng-pattern="/^[0-9]*$/" ng-minlength=10
+                           ng-maxlength=10 required/>
+                    <span class="error text-small block"
+                          ng-if="vm.Form.mobile.$error.minlength || vm.Form.mobile.$error.maxlength">Please enter a 10 digit number.</span>
+                    <span class="error text-small block" ng-if="vm.Form.mobile.$dirty && vm.Form.mobile.$invalid">Please enter a valid Mobile number</span>
+                  </div>
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.address.$dirty && vm.Form.address.$invalid, 'has-success':vm.Form.address.$valid}">
+                    <label class="control-label"> Address <span class="symbol required"></span> </label>
+                    <input type="text" placeholder="Enter your Address" class="form-control" name="address"
+                           ng-model="vm.user.address" ng-minlength=6 ng-maxlength=500 required/>
+                    <span class="error text-small block" ng-if="Form.address.$dirty && Form.address.$invalid">Address is required</span>
+                    <span class="error text-small block"
+                          ng-if="vm.Form.address.$error.minlength || vm.Form.address.$error.maxlength">Address should be in defined range</span>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                  <div class="form-group"
+                       ng-class="{'has-error':vm.Form.gender.$dirty && vm.Form.gender.$invalid, 'has-success':vm.Form.gender.$valid}">
+                    <label class="control-label block"> Gender <span class="symbol required"></span> </label>
+                    <div class="clip-radio radio-primary">
+                      <input type="radio" id="us-female" name="gender" value="Female" ng-model="vm.user.gender"
+                             required>
+                      <label for="us-female"> Female </label>
+                      <input type="radio" id="us-male" name="gender" value="Male" ng-model="vm.user.gender" required>
+                      <label for="us-male"> Male </label>
+                    </div>
+                    <span class="error text-small block" ng-if="vm.Form.gender.$dirty && vm.Form.gender.$error.required">Gender is required.</span>
+                      </div>
+
+
+                  <div class="col-md-5">
+
+                    <div class="form-group"
+                         ng-class="{'has-error':vm.Form.zipcode.$dirty && vm.Form.zipcode.$invalid, 'has-success':vm.Form.zipcode.$valid}">
+                      <label class="control-label"> Zipcode <span class="symbol required"></span> </label>
+                      <input type="text" placeholder="Enter your zipcode" class="form-control" name="zipcode"
+                             ng-pattern="/^[0-9]*$/" ng-model="vm.user.zipcode" ng-minlength=6 ng-maxlength=6 required/>
+                      <span class="error text-small block" ng-if="vm.Form.zipcode.$dirty && vm.Form.zipcode.$invalid">Zipcode is required</span>
+                      <span class="error text-small block"
+                            ng-if="vm.Form.zipcode.$error.minlength || vm.Form.zipcode.$error.maxlength">Zipcode should be of 6 Digits</span>
+                    </div>
+                  </div>
+
+                 <div class="col-md-5">
+                    <div class="form-group"
+                         ng-class="{'has-error':vm.Form.city.$dirty && vm.Form.city.$invalid, 'has-success':Form.city.$valid}">
+                      <label class="control-label"> City <span class="symbol required"></span> </label>
+                      <input type="text" placeholder="Enter your City" class="form-control" name="address"
+                             ng-model="vm.user.city" ng-minlength=3 ng-maxlength=100 required/>
+                      <span class="error text-small block" ng-if="vm.Form.city.$dirty && vm.Form.city.$invalid">City is required</span>
+                      <span class="error text-small block"
+                            ng-if="vm.Form.city.$error.minlength || vm.Form.city.$error.maxlength">Not a city</span>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="text-right">
+                <button type="button" class="btn btn-wide btn-o btn-success" ng-click="vm.save()">
+                  Save
+                </button>
+                <a ui-sref="app.dashboard" class="btn btn-wide btn-danger btn-o"> Cancel </a>
+              </div>
+
+            </ng-form>
+          </fieldset>
+        </uib-tab>
+
+
+      </uib-tabset>
+    </div>
+  </div>
+</div> -->

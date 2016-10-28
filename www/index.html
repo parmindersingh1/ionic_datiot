@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content=" img-src * data:;default-src *; script-src &apos;self&apos; &apos;unsafe-inline&apos; &apos;unsafe-eval&apos; *; style-src  &apos;self&apos; &apos;unsafe-inline&apos; *">
+    <title></title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/ionic-contrib-tinder-cards/ionic.tdcards.css" rel="stylesheet">
+
+    <script src="lib/jQuery/dist/jquery.min.js"></script>
+
+    <script src="app/env.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/angular-moment/angular-moment.min.js"></script>
+    <script src="lib/angular-slugify/dist/angular-slugify.min.js"></script>
+    <script src="lib/collide/collide.js"></script>
+    <script src="lib/ionic-contrib-tinder-cards/ionic.tdcards.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/ionic-toast/dist/ionic-toast.bundle.min.js"></script>
+    <script src="lib/chart.js/dist/Chart.min.js"></script>
+    <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="lib/ng-letter-avatar/dist/ngletteravatar.min.js"></script>
+    <script src="lib/d3/d3.min.js"></script>
+    <script src="lib/ng-knob/dist/ng-knob.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+
+
+
+    <script src="cordova.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/project/future-dashboard/dashboard.module.js"></script>
+    <script src="app/project/future-onboarding/onboarding.module.js"></script>
+    <script src="app/project/future-reports/reports.module.js"></script>
+    <script src="app/project/project.module.js"></script>
+    <script src="app/auth/auth.module.js"></script>
+    <script src="app/router/router.module.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/user-menu/user-menu.module.js"></script>
+    <script src="app/widgets/widgets.module.js"></script>
+
+    <script src="app/project/future-dashboard/dashboard.all.controller.js"></script>
+    <script src="app/project/future-dashboard/dashboard.controller.js"></script>
+    <script src="app/project/future-dashboard/dashboard.service.js"></script>
+    <script src="app/project/future-reports/acOnOffReport.controller.js"></script>
+    <script src="app/project/future-reports/alertsReport.controller.js"></script>
+    <script src="app/project/future-reports/comparisonReport.controller.js"></script>
+    <script src="app/project/future-reports/dgMainReport.controller.js"></script>
+    <script src="app/project/future-reports/energyReport.controller.js"></script>
+    <script src="app/project/future-reports/report.route.js"></script>
+    <script src="app/project/future-reports/temperatureReport.controller.js"></script>
+    <script src="app/project/project.route.js"></script>
+
+    <script src="app/auth/auth.route.js"></script>
+    <script src="app/auth/authorization.service.js"></script>
+    <script src="app/auth/forgot.controller.js"></script>
+    <script src="app/auth/forgot.service.js"></script>
+    <script src="app/auth/home.controller.js"></script>
+    <script src="app/auth/principal.service.js"></script>
+    <script src="app/auth/reset.controller.js"></script>
+    <script src="app/auth/reset.service.js"></script>
+    <script src="app/auth/signin.controller.js"></script>
+    <script src="app/auth/signout.controller.js"></script>
+    <script src="app/auth/validationHelperFactory.js"></script>
+
+    <script src="app/router/router-helper.provider.js"></script>
+
+    <script src="app/core/config.js"></script>
+    <script src="app/core/constants.js"></script>
+    <script src="app/core/init.controller.js"></script>
+    <script src="app/core/push.service.js"></script>
+    <script src="app/core/toast.service.js"></script>
+    <script src="app/core/directives.js"></script>
+
+    <script src="app/user-menu/changePassword.Controller.js"></script>
+    <script src="app/user-menu/changePassword.service.js"></script>
+    <script src="app/user-menu/user-menu.route.js"></script>
+    <script src="app/user-menu/user-profile.controller.js"></script>
+    <script src="app/user-menu/edit-profile.controller.js"></script>
+    <script src="app/user-menu/user-profile.service.js"></script>
+    <script src="app/user-menu/user.service.js"></script>
+
+    <script src="app/widgets/bar.graph.directive.js"></script>
+    <script src="app/widgets/boxes.header.directive.js"></script>
+    <script src="app/widgets/expenses.graph.directive.js"></script>
+    <script src="app/widgets/ht-img-person.directive.js"></script>
+    <script src="app/widgets/ht-widget-header.directive.js"></script>
+    <script src="app/widgets/knob.directive.js"></script>
+    <script src="app/widgets/wave.graph.directive.js"></script>
+
+
+
+    <!-- <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/factories.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/config.js"></script> -->
+  </head>
+  <body ng-app="app">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

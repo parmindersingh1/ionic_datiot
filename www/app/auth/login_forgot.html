@@ -1,0 +1,34 @@
+<ion-view class="forgot-password-view auth-view" cache-view="false">
+  <ion-content scroll="false">
+    <div class="row">
+      <div class="col col-center">
+        <div class="card forgot-password-container">
+          <form name="forgot_password_form" role="form" id="form" novalidate>
+            <div class="item item-body">
+              <label class="item item-input">
+                <input type="email" placeholder="Email" name="user_email" ng-model="vm.email" required>
+              </label>
+            </div>
+            <div class="item item-body bottom-content">
+              <button type="submit" class="button button-positive button-block" ng-click="vm.submit()" ng-disabled="forgot_password_form.$invalid">
+                Recover it
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="alternative-actions">
+          <a class="log-in button button-small button-clear button-light" ui-sref="auth.signin">
+            Log In
+          </a>
+          <a class="sign-up button button-small button-clear button-light" ui-sref="auth.signup">
+            Sign Up
+          </a>
+        </div>
+
+        <div class="copyright stable text-center">
+            {{app.year}} &copy; {{ app.name }} by {{ app.author }}.
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

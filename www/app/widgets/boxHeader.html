@@ -1,0 +1,22 @@
+<div ng-repeat="DashData in vm.boxdata" class="card item">
+    <div class="padding">
+      <h2 class="text-bold title padding-bottom">
+        {{DashData.title}}<i class="icon ion-arrow-right-c"></i></h2>
+      <div class="padding-top padding-bottom  {{DashData.textStyle}}">
+        <span class="counter" count-to="{{DashData.value}}" value="0" duration="1" filter="number">{{DashData.value}}</span>
+      </div>
+      <span class="label {{DashData.partitionStyle}} text-white margin-top-10 margin-right-5">{{DashData.previous}}</span><span
+      class="text-extra-small">Previous period</span>
+    </div>
+    <div class="padding-top {{DashData.textStyle}}">
+      	<progress value="{{DashData.bar}}" max="100"></progress>
+       <!-- <progressbar class="progress-striped active" animate="true"
+        value="DashData.bar" type="{{DashData.barColor}}"></progressbar> -->
+      <!-- <uib-progressbar value="DashData.bar" class="progress-xs no-radius background-dark no-margin"
+                       type="{{DashData.barColor}}"></uib-progressbar> -->
+    </div>
+    <p class="margin-10 text-right">
+      <span class="text-extra-small  margin-10">{{DashData.bar}}</span>
+    </p>
+
+</div>

@@ -1,0 +1,31 @@
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+  <h4 class="mainTitle no-margin">{{vm.title}}</h4>
+  <span class="mainDescription">overview &amp; stats </span>
+  <div ncy-breadcrumb class="pull-right"></div>
+</div>
+<!-- end: BREADCRUMB -->
+<div class="container-fluid container-fullw padding-bottom-10">
+  <div class="row">
+
+    <dt-box-header boxdata="vm.boxData"></dt-box-header>
+
+  </div>
+
+
+  <div class="row">
+
+    <dt-bar-graph bargraphdata="vm.BarGraphData"></dt-bar-graph>
+
+    <dt-wave-graph wavegraphdata="vm.WaveGraphData"></dt-wave-graph>
+
+  </div>
+
+  <div class="row">
+
+    <dt-expenses-graph expensesgraphdata="vm.ExpensesGraphData"></dt-expenses-graph>
+    <dt-real-time-knob knobdata="vm.KnobData"></dt-real-time-knob>
+
+  </div>
+
+</div>
